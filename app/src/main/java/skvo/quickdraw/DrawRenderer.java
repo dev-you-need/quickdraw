@@ -1,4 +1,4 @@
-package skvo.classification;
+package skvo.quickdraw;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

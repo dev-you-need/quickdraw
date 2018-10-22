@@ -1,4 +1,4 @@
-package skvo.classification;
+package skvo.quickdraw;
 
 import android.content.Intent;
 import android.os.Bundle;

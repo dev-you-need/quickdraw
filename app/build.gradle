@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "skvo.quickdraw"
         minSdkVersion 18
-        targetSdkVersion 25
-        versionCode 8
-        versionName '1.08'
+        targetSdkVersion 27
+        versionCode 11
+        versionName '1.11'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,16 +19,23 @@ android {
     }
     productFlavors {
     }
+
+    aaptOptions { noCompress "tflite" }
 }
 
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    //compile files('libs/libandroid_tensorflow_inference_java.jar')
-    compile 'org.tensorflow:tensorflow-android:+'
-    compile 'com.google.android.gms:play-services:11.0.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.tensorflow:tensorflow-lite:1.10.0'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:15.0.2'
+    implementation 'com.google.firebase:firebase-core:15.0.2'
 }
+
+def nativeBuildSystem = 'none'
+apply plugin: 'com.google.gms.google-services'
+

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package skvo.classification;
+package skvo.quickdraw;
 
         import android.os.Handler;
         import android.os.SystemClock;
@@ -110,6 +110,10 @@ public abstract class MyCountDownTimer {
      */
     public abstract void onFinish();
 
+    public int getTime() {
+        return (int)(((mStopTimeInFuture-SystemClock.elapsedRealtime())/1000)+1);
+    }
+
 
     private static final int MSG = 1;
 
@@ -146,5 +150,7 @@ public abstract class MyCountDownTimer {
             }
         }
     };
+
+
 }
 

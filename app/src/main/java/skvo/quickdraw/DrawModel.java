@@ -1,4 +1,4 @@
-package skvo.classification;
+package skvo.quickdraw;
 
 import java.util.ArrayList;
 import java.util.List;

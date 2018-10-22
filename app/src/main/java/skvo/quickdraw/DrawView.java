@@ -1,4 +1,4 @@
-package skvo.classification;
+package skvo.quickdraw;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -146,9 +146,6 @@ public class DrawView extends View {
             return null;
         }
 
-        //int width = mOffscreenBitmap.getWidth();
-        //int height = mOffscreenBitmap.getHeight();
-
         int width = 28;
         int height = 28;
 
@@ -157,7 +154,6 @@ public class DrawView extends View {
         float[] retPixels = new float[pixels.length];
         int[] resize = new int[280*280];
 
-        //Bitmap.createScaledBitmap(mOffscreenBitmap, width, height, false).getPixels(pixels, 0, width, 0, 0, width, height);
         mOffscreenBitmap.getPixels(resize, 0, 280, 0, 0, 280, 280);
 
 
@@ -167,11 +163,7 @@ public class DrawView extends View {
 
 
         for (int i=0; i<resize.length; i++){
-            //(i/256)/28;
-            //(i%256)/28;
-
             int pix = resize[i];
-            //float b = 1 - ((pix & 0xff)/255f);
             int b = (pix&0xff);
             int k = (((i/2800))*28) + ((i%280)/10);
             if (pixels[k] > b) pixels[k]=b;
@@ -180,59 +172,14 @@ public class DrawView extends View {
         float max = 0;
         int count_not_zero =0;
         for (int i=0; i<pixels.length; i++){
-            //pixels[i] = pixels[i]/100;
+
             retPixels[i] = 1 - (pixels[i]/255f);
-            //if (retPixels[i]>max) max = retPixels[i];
-            //Log.d("pixels " + i, retPixels[i]+"");
 
             if (retPixels[i]!=0) {
-                //Log.d("pixels_ " + i, retPixels[i] + "");
                 count_not_zero++;
             }
-
         }
-        Log.d("count_not_zero", count_not_zero+"");
-/*
-        for (int i=0; i<pixels.length; i++){
-            retPixels[i] = retPixels[i]/max;
-        }
-        */
-/*
-        int count_not_zero =0;
-        for (int i=0; i<pixels.length; i++){
-            if (pixels[i]>1){
-                pixels[i] = 1;
-            }
 
-            if (pixels[i]>0){
-                count_not_zero++;
-                Log.d("pixels " + i, pixels[i]+"");
-            }
-        }
-        Log.d("count_not_zero", count_not_zero+"");
-*/
-
-
-//        mOffscreenBitmap.setPixels(pixels, 0, width, 0,0, width, height);
-
-/*
-        int count_not_zero =0;
-
-        float[] retPixels = new float[pixels.length];
-        for (int i = 0; i < pixels.length; ++i) {
-            // Set 0 for white and 255 for black pixel
-            ////Log.d("pixels " + i, pixels[i]+"");
-            int pix = pixels[i];
-            float b = 1 - ((pix & 0xff)/255f);
-            if (b!=0) {
-                Log.d("pixels_ " + i, b + "");
-                count_not_zero++;
-            }
-            //retPixels[i] = 0xff - b;
-            retPixels[i] = b;
-        }
-        Log.d("count_not_zero", count_not_zero+"");
-*/
         return retPixels;
     }
 

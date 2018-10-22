@@ -28,7 +28,7 @@
 <string name="label8">топор</string>
 <string name="label9">рюкзак</string>
 <string name="label10">банан</string>
-<string name="label11">повязка</string>
+<string name="label11">бинт</string>
 <string name="label12">сарай</string>
 <string name="label13">бейсбольная бита</string>
 <string name="label14">корзина</string>
@@ -101,7 +101,7 @@
 <string name="label81">пончик</string>
 <string name="label82">дверь</string>
 <string name="label83">дракон</string>
-<string name="label84">костюмер</string>
+<string name="label84">комод</string>
 <string name="label85">барабаны</string>
 <string name="label86">утка</string>
 <string name="label87">ухо</string>
@@ -274,7 +274,7 @@
 <string name="label254">Великая Китайская стена</string>
 <string name="label255">Мона Лиза</string>
 <string name="label256">тигр</string>
-<string name="label257">туалет</string>
+<string name="label257">унитаз</string>
 <string name="label258">зуб</string>
 <string name="label259">зубная щетка</string>
 <string name="label260">зубная паста</string>
