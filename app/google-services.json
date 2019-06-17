@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "515335742329",
+    "firebase_url": "https://quick-draw-fd9a8.firebaseio.com",
+    "project_id": "quick-draw-fd9a8",
+    "storage_bucket": "quick-draw-fd9a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515335742329:android:8744118ac22153bc",
+        "android_client_info": {
+          "package_name": "skvo.quickdraw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515335742329-rnon64s5j160a1sgq89jj7o9ai2sb6t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtbycSJafI0WCGzpNqCYp3r_8AwHM1-fg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
