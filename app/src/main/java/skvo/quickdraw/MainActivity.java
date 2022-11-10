@@ -5,8 +5,8 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PointF;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -16,16 +16,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.InterstitialAd;
+//import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private String labelName;
 
     private Tracker mTracker;
-    private InterstitialAd mInterstitialAd;
+    //private InterstitialAd mInterstitialAd;
 
 
     @Override
@@ -135,9 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         mTracker = getDefaultTracker();
 
         try{
-            MobileAds.initialize(this, ADMOB_APP_ID);
-            mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId(ADMOB_AD_ID);
+            //MobileAds.initialize(this, ADMOB_APP_ID);
+            //mInterstitialAd = new InterstitialAd(this);
+            //mInterstitialAd.setAdUnitId(ADMOB_AD_ID);
 
         } catch (Exception e){
             Log.e(TAG, e.toString());
@@ -421,7 +419,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             public void onClick(View v) {
                 //startActivity(new Intent(MainActivity.this, StartActivity.class));
                 //System.exit(0);
-                showAd();
+                //showAd();
                 finish();
 
             }
@@ -430,7 +428,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         btn_again.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAd();
+                //showAd();
                 newGame();
                 dialog.cancel();
             }
@@ -476,8 +474,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     synchronized public Tracker getDefaultTracker() {
         if (mTracker == null) {
             try {
-                GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-                mTracker = analytics.newTracker(getString(R.string.analyticsId));
+                //GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+                //mTracker = analytics.newTracker(getString(R.string.analyticsId));
             }catch (Exception e){
                 Log.e(TAG, e.toString());
             }
@@ -509,13 +507,13 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     private void loadAd(){
         try {
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            //mInterstitialAd.loadAd(new AdRequest.Builder().build());
         }catch (Exception e){
             Log.e(TAG, e.toString());
             sendError(e);
         }
     }
-
+/*
     private void showAd(){
         try {
             if (mInterstitialAd.isLoaded()) {
@@ -532,6 +530,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             sendError(e);
         }
     }
+
+ */
 
     private class RecognitionResult{
         int idx;
